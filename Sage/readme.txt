@@ -1,26 +1,18 @@
-A) In the Windows Command Prompt, enter the following command to install WSL: wsl --install
-B) It should prompt you for a UNIX username + pass. Enter whatever you'd like (I did my NAU username for clarity)
-C) WSL should now be installed. You should have an application called Ubuntu
-D) Boot up Ubuntu. It will be a terminal. Input all remaining commands into this terminal.
-E) Run: wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-F) Run: bash Miniconda3-latest-Linux-x86_64.sh
-G) Restart Ubuntu
-H) Conda should now be installed.
-I) Run "explorer.exe ." in the terminal to pull up your Linux file system location
-J) Put the environments.yml file in this folder (or make an LSST folder and put it inside there)
-J) Create a new Conda environment (this will be your LSST_Project environment)
-K) Activate that Conda environment
-L) 
+1) In the Windows Command Prompt, enter the following command to install WSL: wsl --install
+2) It should prompt you for a UNIX username + pass. Enter whatever you'd like (I did my NAU username for clarity)
+3) WSL should now be installed. You should have an application called Ubuntu
+4) Boot up Ubuntu. It will be a terminal. Input all remaining commands into this terminal.
+5) Run: wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+6) Run: bash Miniconda3-latest-Linux-x86_64.sh
+7) Restart Ubuntu
+8) Conda should now be installed.
+9) Run "explorer.exe ." in the terminal to pull up your Linux file system location
+	^ Note: You should save this location because this will be your working environment. I added a shortcut to it to my desktop.
+10) Put the environments.yml file in this folder (or make an LSST folder and put it inside there)
+11) Create a new Conda environment (this will be your LSST_Project environment)
+12) Activate that Conda environment
 
-1) Install Anaconda Distribution via https://www.anaconda.com/download
-2) Run Anaconda Prompt in the Windows search bar
-3) CD to your project folder (where environments.yml is)
-4) Create a new Conda environment (this will be your LSST_Project environment)
-5) Activate that Conda environment
-
-6) RUN THE FOLLOWING COMMANDS (from your project folder):
-pip install pyorb # if this doesn't work try "pip install pyorb"
-
+13) RUN THE FOLLOWING COMMANDS (from your project folder):
 conda config --add channels conda-forge
 conda install numpy
 conda install matplotlib
@@ -30,10 +22,14 @@ conda install pandas
 conda install astropy
 conda install sbpy
 conda install pymongo
+conda install openorb
 
-7) If everything works you should be able to run main.py
+14) Restart Ubuntu
 
-8) From there, every time you boot up the program you should run something that looks like this from Anaconda Prompt:
-conda activate lsst_env                      # conda activate lsst2
-cd C:\Users\grays\Desktop\LSSTProject
+15) You should now be able to run main.py 	(but make sure you reactivate your conda environment and CD into the workspace first)
+
+16) From there, every time you boot up the program you should run something that looks like this from Anaconda Prompt:
+
+conda activate lsst                      # conda activate lsst2
+cd LSST
 python main.py
