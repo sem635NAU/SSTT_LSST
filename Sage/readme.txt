@@ -1,3 +1,6 @@
+[WORKSPACE INSTALLATION INSTRUCTIONS]
+Note from Sage: The PyOorb library is only available for Mac and Linux. To get around this we'll have to use a WSL environment. This readme.txt will help you set that up and get everything working on your local computer.
+
 1) In the Windows Command Prompt, enter the following command to install WSL: wsl --install
 2) It should prompt you for a UNIX username + pass. Enter whatever you'd like (I did my NAU username for clarity)
 3) WSL should now be installed. You should have an application called Ubuntu
@@ -28,8 +31,8 @@ conda install openorb
 
 15) You should now be able to run main.py 	(but make sure you reactivate your conda environment and CD into the workspace first)
 
-16) From there, every time you boot up the program you should run something that looks like this from Anaconda Prompt:
+16) From there, every time you boot up Ubuntu you need to:
+	a) Activate your Conda environment
+	b) cd into your project folder
+	c) Run whatever .py files you'd like
 
-conda activate lsst                      # conda activate lsst2
-cd LSST
-python main.py
