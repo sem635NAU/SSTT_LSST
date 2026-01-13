@@ -27,12 +27,17 @@ conda install sbpy
 conda install pymongo
 conda install openorb
 
-14) Restart Ubuntu
+14) To install pyoorb:
+sudo apt update && sudo apt install build-essential python3-dev
+pip install pyoorb
 
-15) You should now be able to run main.py 	(but make sure you reactivate your conda environment and CD into the workspace first)
+15) Restart Ubuntu
 
-16) From there, every time you boot up Ubuntu you need to:
+16) You should now be able to run main.py 	(but make sure you reactivate your conda environment and CD into the workspace first)
+
+17) From there, every time you boot up Ubuntu you need to:
 	a) Activate your Conda environment
 	b) cd into your project folder
 	c) Run whatever .py files you'd like
+
 
