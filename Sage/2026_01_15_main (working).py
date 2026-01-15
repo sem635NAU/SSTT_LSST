@@ -96,7 +96,7 @@ def LSST_MAIN(orbit, epoch_start, epoch_end, step, printALot, output_name, outpu
                 currentDEC_rad = np.radians(currentDEC)
                 currentRA_LSST_rad = np.radians(currentRA_LSST)
                 currentDEC_LSST_rad = np.radians(currentDEC_LSST)
-                
+
                 P = np.arccos(np.sin(currentDEC_rad)*np.sin(currentDEC_LSST_rad) + np.cos(currentDEC_rad)*np.cos(currentDEC_LSST_rad)*np.cos(currentRA_rad - currentRA_LSST_rad))
                 P = np.degrees(P)
                 if P <= R:
@@ -129,14 +129,10 @@ def LSST_MAIN(orbit, epoch_start, epoch_end, step, printALot, output_name, outpu
 
 epoch_init = Time('2026-05-05T00:00:00', scale='utc')
 epoch_final = Time('2028-06-05T00:00:00', scale='utc')
-ceres = orbitFromDict('Pallas', 2.7701937, 0.2305404, 34.92402, 310.91037, 172.8953, 168.79869, Time(60808, format='mjd'), 4.11, 0.15) # THIS IS PALLAS
+ceres = orbitFromDict('Pallas', 2.76992582511479, 0.2306429787781384, 34.92832687077855, 310.9333840114307, 172.8885963367437, 211.5297778033731, Time('2025-11-21T00:00:00', scale='utc'), 4.11, 0.11) # THIS IS PALLAS
 LSST_MAIN(ceres, epoch_init, epoch_final, 1, True, "test2", "parquet", 1, 1.75)
 
 
-# IT SEEMS WEIRD THAT CERES ISN'T IMAGED ONCE BY THE LSST OVER A 2-YEAR SPAN...
-# SOMETHING'S GOTTA BE WRONG WITH THE CALCULATIONS RIGHT?
-# ONE SOLUTION WOULD BE TO GRAPH LSST OBSERVATIONS AND TO GRAPH ASTEROID OBSERVATIONS, AND SEE IF THERE REALLY IS ANY OVERLAP\
-# YEAH SOMETHING AIN'T RIGHT. I RAN IT AT R=15 DEGREES AND STILL NOTHING OVER A 2 YEAR SPAN...
 
 
 
@@ -163,13 +159,7 @@ LSST_MAIN(ceres, epoch_init, epoch_final, 1, True, "test2", "parquet", 1, 1.75)
 
 
 
-
-
-
-
-
-
-# Should I do objectS or just one object at a time?
+# Should we do objectS or just one object at a time?
 # [orbit] is the orbit of the object (AstroPy Orbit object)
 # [csvFile] is the name of the CSV file that contains the generated coordinate (use generateCoordsBetweenEpochs() to generate new ones) (String)
 # [startEpoch] and [endEpoch] are the start and end dates for the search (sbpy Time object)
